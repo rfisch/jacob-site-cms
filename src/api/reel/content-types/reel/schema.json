@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reels",
+  "info": {
+    "singularName": "reel",
+    "pluralName": "reels",
+    "displayName": "reel",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false,
+    "populateCreatorFields": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Video": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Cover": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Caption": {
+      "type": "text",
+      "maxLength": 2200,
+      "required": true
+    },
+    "Tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tag.tag"
+    }
+  }
+}

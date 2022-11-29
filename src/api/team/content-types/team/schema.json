@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "teams",
+  "info": {
+    "singularName": "team",
+    "pluralName": "teams",
+    "displayName": " Team",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Games": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::game.game",
+      "mappedBy": "Opponent"
+    },
+    "League": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::league.league",
+      "inversedBy": "Teams"
+    },
+    "Seasons": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::season.season",
+      "mappedBy": "Team"
+    },
+    "Home_Area": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::arena.arena",
+      "inversedBy": "Hosted_Teams"
+    }
+  }
+}

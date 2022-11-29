@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_geo_location_addresses",
+  "info": {
+    "displayName": "Address"
+  },
+  "options": {},
+  "attributes": {
+    "StreetLIne1": {
+      "type": "string",
+      "required": true
+    },
+    "StreetLIne2": {
+      "type": "string"
+    },
+    "City": {
+      "type": "string",
+      "required": true
+    },
+    "State": {
+      "type": "string",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 2
+    },
+    "PostalCode": {
+      "type": "string",
+      "required": true
+    },
+    "Country": {
+      "type": "string",
+      "maxLength": 2,
+      "minLength": 2
+    }
+  }
+}

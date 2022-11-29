@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "arenas",
+  "info": {
+    "singularName": "arena",
+    "pluralName": "arenas",
+    "displayName": "Arena",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Address": {
+      "type": "component",
+      "repeatable": false,
+      "component": "geo-location.address"
+    },
+    "Hosted_Teams": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::team.team",
+      "mappedBy": "Home_Area"
+    }
+  }
+}

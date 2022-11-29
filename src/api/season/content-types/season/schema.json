@@ -1,0 +1,75 @@
+{
+  "kind": "collectionType",
+  "collectionName": "seasons",
+  "info": {
+    "singularName": "season",
+    "pluralName": "seasons",
+    "displayName": "Season",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Year_Start": {
+      "type": "integer"
+    },
+    "Year_End": {
+      "type": "integer"
+    },
+    "Time_Of_Year": {
+      "type": "enumeration",
+      "enum": [
+        "Spring",
+        "Summer",
+        "Fall"
+      ]
+    },
+    "Team": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::team.team",
+      "inversedBy": "Seasons"
+    },
+    "Level": {
+      "type": "enumeration",
+      "enum": [
+        "A",
+        "AA",
+        "AAA",
+        "JV",
+        "V",
+        "JR"
+      ]
+    },
+    "Age_Classification": {
+      "type": "enumeration",
+      "enum": [
+        "N/A",
+        "U14",
+        "U16",
+        "U18"
+      ]
+    },
+    "league": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::league.league"
+    },
+    "games": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::game.game"
+    },
+    "Display": {
+      "type": "string"
+    },
+    "Games": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::game.game",
+      "mappedBy": "Season"
+    }
+  }
+}

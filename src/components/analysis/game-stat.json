@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_analysis_game_stats",
+  "info": {
+    "displayName": "GameStat",
+    "icon": "hashtag",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "SOG": {
+      "type": "integer"
+    },
+    "GA": {
+      "type": "integer"
+    },
+    "SV": {
+      "type": "integer"
+    },
+    "SVPerc": {
+      "type": "decimal"
+    },
+    "GF": {
+      "type": "integer"
+    }
+  }
+}

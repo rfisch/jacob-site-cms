@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "games",
+  "info": {
+    "singularName": "game",
+    "pluralName": "games",
+    "displayName": "Game",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Home": {
+      "type": "boolean"
+    },
+    "WL": {
+      "type": "enumeration",
+      "enum": [
+        "Win",
+        "Loss",
+        "Tie"
+      ]
+    },
+    "Stats": {
+      "type": "component",
+      "repeatable": false,
+      "component": "analysis.game-stat"
+    },
+    "Opponent": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::team.team",
+      "inversedBy": "Games"
+    },
+    "arena": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::arena.arena"
+    },
+    "League": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::league.league",
+      "inversedBy": "Games"
+    },
+    "Date": {
+      "type": "datetime",
+      "required": true
+    },
+    "Season": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::season.season",
+      "inversedBy": "Games"
+    }
+  }
+}
